@@ -9,8 +9,8 @@ const AllocationForm = ({ selectedCurrency }) => {
     const [action, setAction] = useState('');
 
     const submitEvent = () => {
-        if (cost > remaining) {
-            alert("The value cannot exceed remaining funds  £" + remaining);
+        if (parseInt(cost) > remaining) {
+            alert("The value cannot exceed remaining funds " + selectedCurrency + remaining);
             setCost("");
             return;
         }
@@ -70,7 +70,7 @@ const AllocationForm = ({ selectedCurrency }) => {
                     </div>
                     <input
                         required='required'
-                        type='number'
+                        type='text'
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem', size: 10 }}
